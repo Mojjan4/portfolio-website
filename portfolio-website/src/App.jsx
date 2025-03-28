@@ -1,121 +1,153 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { MapPinHouse, MailIcon, PhoneIcon, CornerDownRight } from 'lucide-react';
 
 const App = () => {
-  return (
-    <div className="bg-midnight text-white">
-      {/* Landing Section */}
-      <main className="container mx-auto px-4 min-h-screen flex items-center">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/2 space-y-8">
-            <h1 className="font-display text-5xl md:text-7xl leading-tight">
-              Welcome to<br />
-              My Digital<br />
-              Portfolio
-            </h1>
+    return (
+        <div className="bg-midnight text-white">
+            {/* Landing Section */}
+            <main className="container mx-auto min-h-screen flex items-center">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
+                    <div className="lg:w-1/2 space-y-20">
+                        <h1 className="font-display text-5xl md:text-8xl leading-tight">
+                            Welcome to<br />
+                            My Digital<br />
+                            Portfolio
+                        </h1>
 
-            <div className="inline-block border border-sand/30 rounded-full px-8 py-3">
-              <p className="text-lg">Christopher Lundqvist / Software Developer</p>
-            </div>
+                        <div className="inline-block border border-sand/30 rounded-full px-8 py-3">
+                            <p className="text-3xl">Christopher Lundqvist / Software Developer</p>
+                        </div>
 
-            <div className="pt-12">
-              <a
-                href="#about"
-                className="group inline-flex items-center space-x-4 text-xl hover:text-sand transition-colors"
-              >
-                <span>Work with me today</span>
-                <ArrowRight className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" />
-              </a>
-            </div>
-          </div>
+                        <div className="pt-12">
+                            <a
+                                href="#contact"
+                                className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-colors"
+                            >
+                                <CornerDownRight strokeWidth={0.75} className="w-15 h-15 transform group-hover:translate-x-2 transition-transform" />
+                                <span>Work with me today</span>
+                            </a>
+                        </div>
+                    </div>
 
-          <div className="lg:w-1/2 relative">
-            <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
-                alt="Professional portrait"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </main>
-
-      {/* About Section */}
-      <section id="about" className="container mx-auto px-4 min-h-screen flex items-center">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="font-display text-5xl md:text-7xl leading-tight">
-              Who is<br />
-              Christopher?
-            </h2>
-
-            <p className="text-xl leading-relaxed max-w-xl">
-              I'm a developer with three years of experience. I'm passionate about traveling, baking sourdough, and growing vegetables.
-            </p>
-
-            <div className="w-24 h-0.5 bg-sand/30"></div>
-          </div>
-
-          <div className="lg:w-1/2 relative">
-            <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80"
-                alt="Reading a book"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Background Section */}
-      <section id="background" className="container mx-auto px-4 min-h-screen flex items-center">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="lg:w-1/2 space-y-16">
-            <h2 className="font-display text-7xl leading-tight">
-              My Background
-            </h2>
-
-            <div className="space-y-16">
-              <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <ArrowRight className="w-6 h-6 text-sand" />
-                  <h3 className="text-2xl font-display">Education</h3>
+                    <div className="lg:w-1/2 relative">
+                        <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
+                                alt="Professional portrait"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <ul className="space-y-4 text-gray-400">
-                  <li>MFA from the Ecole de Talens, 2019</li>
-                  <li>BFA from the Grover Wood Art Institute, 2018</li>
-                </ul>
-              </div>
+            </main>
 
-              <div className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <ArrowRight className="w-6 h-6 text-sand" />
-                  <h3 className="text-2xl font-display">Work Experience</h3>
+            {/* About Section */}
+            <section id="about" className="container mx-auto  min-h-screen flex items-center">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
+                    <div className="lg:w-1/2 space-y-8">
+                        <h2 className="font-display text-5xl md:text-8xl leading-tight">
+                            Who is<br />
+                            Christopher?
+                        </h2>
+
+                        <p className="text-3xl leading-relaxed max-w-xl">
+                            I'm a developer with three years of experience. I'm passionate about traveling, baking sourdough, and growing vegetables.
+                        </p>
+                        <hr
+                            class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent dark:via-neutral-400" />
+
+                        <div className="w-24 h-0.5 bg-sand/30"></div>
+                    </div>
+
+                    <div className="lg:w-1/2 relative">
+                        <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80"
+                                alt="Reading a book"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <ul className="space-y-4 text-gray-400">
-                  <li>Freelance Graphic Designer and Illustrator, 2022-present</li>
-                  <li>Senior Graphic Designer at the Talens Insitut, 2021-22</li>
-                  <li>Junior Creative at the NXTR Design Studio, 2020-21</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+            </section>
 
-          <div className="lg:w-1/2 relative">
-            <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
-                alt="Working on designs"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+            {/* Background Section */}
+            <section id="background" className="container mx-auto min-h-screen flex items-center">
+                <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
+                    <div className="lg:w-1/2 space-y-16">
+                        <h2 className="font-display text-8xl leading-tight">
+                            My Background
+                        </h2>
+
+                        <div className="space-y-16">
+                            <div className="space-y-8">
+                                <div className="flex items-center gap-4">
+                                    <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand" />
+                                    <h3 className="text-3xl font-display">Education</h3>
+                                </div>
+                                <ul className="list-disc space-y-4 text-gray-400 text-2xl">
+                                    <li>IT-Högskolan Gothenburg, App developer for iOS and Android, 2019 - 2021</li>
+                                    <li>Solbergagymnasiet, Arvika </li>
+                                </ul>
+                            </div>
+
+                            <div className="space-y-8">
+                                <div className="flex items-center gap-4">
+                                    <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand" />
+                                    <h3 className="text-3xl font-display">Work Experience</h3>
+                                </div>
+                                <ul className="list-disc space-y-4 text-gray-400 text-2xl">
+                                    <li>Software developer @ ECARX, 2023 - Present</li>
+                                    <li>Cilbuper AB - Consultant at ECARX, 2023 - 2024</li>
+                                    <li>Xamera - Consusltant at Hogia, 2022 - 2022</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="lg:w-1/2 relative">
+                        <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
+                            <img
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                                alt="Working on designs"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="container mx-auto min-h-screen flex items-center">
+                {/* Reach Out to Me Title */}
+                <h2 className="text-8xl font-bold text-white mt-5 mb-300">
+                    Reach Out <br />
+                    to Me
+                </h2>
+
+                {/* Contact Information */}
+                <div className="flex items-center justify-start space-x-20 mt-20">
+                    {/* Address */}
+                    <div className="flex flex-col items-center ">
+                        <MapPinHouse strokeWidth={0.75} className="w-20 h-20 m-2" />
+                        <span className="text-gray-500 text-lg">Vintergatan 7, 417 58 Gothenburg</span>
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex flex-col items-center">
+                        <MailIcon strokeWidth={0.75} className="w-20 h-20 m-2" />
+                        <span className="text-gray-500 text-lg">christopher.persson91@gmail.com</span>
+                    </div>
+
+                    {/* Phone */}
+                    <div className="flex flex-col items-center">
+                        <PhoneIcon strokeWidth={0.75} className="w-20 h-20 m-2" />
+                        <span className="text-gray-500 text-lg">+46 820 47 47</span>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-    </div>
-  );
+    );
 }
 
 export default App;
