@@ -1,15 +1,15 @@
-:root {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* TODO: CHANGE FONT-FAMILY */
-    color: white;
-    background-color: black;
+@import "tailwindcss";
 
-    /* Smooth font rendering */
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
+  body {
+    background: black;
+  }
 }
