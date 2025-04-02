@@ -44,7 +44,7 @@ const App = () => {
             {/* About Section */}
             <section id="about" className="container mx-auto  min-h-screen flex items-center">
                 <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
-                    <div className="lg:w-1/2 space-y-8">
+                    <div className="lg:w-1/2 space-y-20">
                         <h2 className="font-display text-5xl md:text-8xl leading-tight">
                             Who is<br />
                             Christopher?
@@ -118,31 +118,51 @@ const App = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="container mx-auto min-h-screen flex items-center">
-                {/* Reach Out to Me Title */}
-                <h2 className="text-8xl font-bold text-white mt-5 mb-300">
-                    Reach Out <br />
-                    to Me
-                </h2>
+            <section id="contact" className="container mx-auto px-4 min-h-screen flex items-center">
+                <div className="w-full space-y-60">
+                    <h2 className="font-display text-8xl leading-tight">
+                        Reach Out<br />
+                        to Me
+                    </h2>
 
-                {/* Contact Information */}
-                <div className="flex items-center justify-start space-x-20 mt-20">
-                    {/* Address */}
-                    <div className="flex flex-col items-center ">
-                        <MapPinHouse strokeWidth={0.75} className="w-20 h-20 m-2" />
-                        <span className="text-gray-500 text-lg">Vintergatan 7, 417 58 Gothenburg</span>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div className="space-y-4">
+                            <h3 className="text-3xl font-display">Address</h3>
+                            <p className="text-xl text-gray-400">
+                                Vintergatan 7,<br />
+                                417 58, Gothenburg
+                            </p>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h3 className="text-3xl font-display">Email</h3>
+                            <a
+                                href="mailto:christopher.persson91@gmail.com" //TODO fix this
+                                className="text-xl text-gray-400 hover:text-sand transition-colors"
+                            >
+                                christopher.persson91@gmail.com
+                            </a>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h3 className="text-3xl font-display">Phone</h3>
+                            <a
+                                href="tel:+11234567890" //TODO: Add phone number
+                                className="text-xl text-gray-400 hover:text-sand transition-colors"
+                            >
+                                +46 768 20 47 47
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Email */}
-                    <div className="flex flex-col items-center">
-                        <MailIcon strokeWidth={0.75} className="w-20 h-20 m-2" />
-                        <span className="text-gray-500 text-lg">christopher.persson91@gmail.com</span>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="flex flex-col items-center">
-                        <PhoneIcon strokeWidth={0.75} className="w-20 h-20 m-2" />
-                        <span className="text-gray-500 text-lg">+46 820 47 47</span>
+                    <div className="flex justify-end mx-50">
+                        <a
+                            href="#"
+                            className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-colors"
+                        >
+                            <CornerDownRight className="w-10 h-10 transform group-hover:translate-x-2 transition-transform" />
+                            <span>Let's take a java</span>
+                        </a>
                     </div>
                 </div>
             </section>
