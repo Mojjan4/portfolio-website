@@ -51,10 +51,10 @@ const App = () => {
                         </h2>
 
                         <p className="text-3xl leading-relaxed max-w-xl slide-from-left">
-                            I'm a developer with three years of experience. I'm passionate about traveling, baking sourdough, and growing vegetables.
+                            I&apos;m a developer with three years of experience. I&apos;m passionate about traveling, baking sourdough, and growing vegetables.
                         </p>
                         <hr
-                            class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent dark:via-neutral-400 slide-from-bottom" />
+                            className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent dark:via-neutral-400 slide-from-bottom" />
 
                         <div className="w-24 h-0.5 bg-sand/30"></div>
                     </div>
@@ -161,7 +161,7 @@ const App = () => {
                             className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-colors duration-300"
                         >
                             <CornerDownRight className="w-10 h-10 transform group-hover:translate-x-2 transition-transform duration-300 slide-from-left" />
-                            <span className='slide-from-bottom'>Let's take a java</span>
+                            <span className='slide-from-bottom'>Let&apos;s take a java</span>
                         </a>
                     </div>
                 </div>
