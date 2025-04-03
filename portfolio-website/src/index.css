@@ -4,12 +4,116 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Styles */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 
-  body {
-    background: black;
-  }
+    body {
+        background: black;
+    }
+}
+
+
+/* Utilities */
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* 🔽 Slide from top animation (for headlines) */
+@keyframes slideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔄 Slide from left animation (for images or left-aligned text) */
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ➡️ Slide from right animation (for right-aligned text) */
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ⬆️ Slide from bottom animation (for contact items) */
+@keyframes slideFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🚀 Fade-in effect (optional for subtle animations) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Default state (hidden) */
+.section-hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+/* Visible state (after animation) */
+.section-show {
+    opacity: 1;
+}
+
+/* 🌟 Animation classes */
+.slide-from-top {
+    opacity: 0;
+    animation: slideFromTop 1s ease-out forwards;
+}
+
+.slide-from-left {
+    opacity: 0;
+    animation: slideFromLeft 1s ease-out forwards;
+}
+
+.slide-from-right {
+    opacity: 0;
+    animation: slideFromRight 1s ease-out forwards;
+}
+
+.slide-from-bottom {
+    opacity: 0;
+    animation: slideFromBottom 1s ease-out forwards;
 }
