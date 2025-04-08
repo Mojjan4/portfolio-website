@@ -1,35 +1,57 @@
 import React from 'react';
 import { CornerDownRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './animations';
 
 const App = () => {
     return (
         <div className="bg-midnight text-white">
             {/* Landing Section */}
-            <main className="container mx-auto py-60 flex items-center">
+            <motion.main
+                id="home"
+                className="container mx-auto py-60 flex items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+            >
                 <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
-                    <div className="lg:w-1/2 space-y-20 ">
-                        <h1 className="font-display text-5xl md:text-8xl leading-tight slide-from-top">
+                    {/* Text Section */}
+                    <div className="lg:w-1/2 space-y-20">
+                        {/* Heading */}
+                        <motion.h1
+                            className="font-display text-5xl md:text-8xl leading-tight"
+                            variants={fadeInUp}
+                        >
                             Welcome to<br />
                             My Digital<br />
                             Portfolio
-                        </h1>
+                        </motion.h1>
 
-                        <div className="inline-block border border-sand/30 rounded-full px-8 py-3 slide-from-left">
+                        {/* Subheading */}
+                        <motion.div
+                            className="inline-block border border-sand/30 rounded-full px-8 py-3"
+                            variants={fadeInLeft}
+                        >
                             <p className="text-3xl">Christopher Lundqvist / Software Developer</p>
-                        </div>
+                        </motion.div>
 
-                        <div className="pt-12">
+                        {/* Call to Action */}
+                        <motion.div className="pt-12" variants={fadeInLeft}>
                             <a
                                 href="#contact"
                                 className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-all duration-300"
                             >
-                                <CornerDownRight strokeWidth={0.75} className="w-15 h-15 transform group-hover:translate-x-2 transition-transform duration-300 slide-from-left" />
-                                <span className="slide-from-bottom">Work with me today</span>
+                                <CornerDownRight
+                                    strokeWidth={0.75}
+                                    className="w-15 h-15 transform group-hover:translate-x-2 transition-transform duration-300"
+                                />
+                                <motion.span variants={fadeInBottom}>Work with me today</motion.span>
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
 
-                    <div className="lg:w-1/2 relative slide-from-right">
+                    {/* Image Section */}
+                    <motion.div className="lg:w-1/2 relative" variants={fadeInRight}>
                         <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
@@ -37,29 +59,54 @@ const App = () => {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </main>
+            </motion.main>
+
 
             {/* About Section */}
-            <section id="about" className="container mx-auto py-60 flex items-center">
+            <motion.section
+                id="about"
+                className="container mx-auto py-60 flex items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+            >
                 <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
-                    <div className="lg:w-1/2 space-y-20 ">
-                        <h2 className="font-display text-5xl md:text-8xl leading-tight slide-from-top">
+                    {/* Left Column: Text */}
+                    <div className="lg:w-1/2 space-y-20">
+                        {/* Heading */}
+                        <motion.h2
+                            className="font-display text-5xl md:text-8xl leading-tight"
+                            variants={fadeInUp}
+                        >
                             Who is<br />
                             Christopher?
-                        </h2>
+                        </motion.h2>
 
-                        <p className="text-3xl leading-relaxed max-w-xl slide-from-left">
+                        {/* Paragraph */}
+                        <motion.p
+                            className="text-3xl leading-relaxed max-w-xl"
+                            variants={fadeInLeft}
+                        >
                             I&apos;m a developer with three years of experience. I&apos;m passionate about traveling, baking sourdough, and growing vegetables.
-                        </p>
-                        <hr
-                            className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent dark:via-neutral-400 slide-from-bottom" />
+                        </motion.p>
 
-                        <div className="w-24 h-0.5 bg-sand/30"></div>
+                        {/* Divider Line */}
+                        <motion.hr
+                            className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent dark:via-neutral-400"
+                            variants={fadeInBottom}
+                        />
+
+                        {/* Decorative Line */}
+                        <motion.div
+                            className="w-24 h-0.5 bg-sand/30"
+                            variants={fadeInBottom}
+                        />
                     </div>
 
-                    <div className="lg:w-1/2 relative slide-from-right">
+                    {/* Right Column: Image */}
+                    <motion.div className="lg:w-1/2 relative" variants={fadeInRight}>
                         <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80"
@@ -67,45 +114,83 @@ const App = () => {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </section>
+            </motion.section>
+
 
             {/* Background Section */}
-            <section id="background" className="container mx-auto py-60 flex items-center">
+            <motion.section
+                id="background"
+                className="container mx-auto py-60 flex items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+            >
                 <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-50">
-                    <div className="lg:w-1/2 space-y-16 ">
-                        <h2 className="font-display text-8xl leading-tight slide-from-top">
+                    {/* Left Column */}
+                    <div className="lg:w-1/2 space-y-16">
+                        {/* Main Heading */}
+                        <motion.h2
+                            className="font-display text-8xl leading-tight"
+                            variants={fadeInUp}
+                        >
                             My Background
-                        </h2>
+                        </motion.h2>
 
+                        {/* Education & Work Experience Sections */}
                         <div className="space-y-16">
+                            {/* Education */}
                             <div className="space-y-8">
                                 <div className="flex items-center gap-4">
-                                    <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand slide-from-left" />
-                                    <h3 className="text-3xl font-display slide-from-top">Education</h3>
+                                    <motion.div variants={fadeInLeft}>
+                                        <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand" />
+                                    </motion.div>
+                                    <motion.h3
+                                        className="text-3xl font-display"
+                                        variants={fadeInUp}
+                                    >
+                                        Education
+                                    </motion.h3>
                                 </div>
-                                <ul className="list-disc space-y-4 text-gray-400 text-2xl slide-from-bottom">
+
+                                <motion.ul
+                                    className="list-disc space-y-4 text-gray-400 text-2xl"
+                                    variants={fadeInBottom}
+                                >
                                     <li>IT-Högskolan Gothenburg, App developer for iOS and Android, 2019 - 2021</li>
-                                    <li>Solbergagymnasiet, Arvika </li>
-                                </ul>
+                                    <li>Solbergagymnasiet, Arvika</li>
+                                </motion.ul>
                             </div>
 
+                            {/* Work Experience */}
                             <div className="space-y-8">
                                 <div className="flex items-center gap-4">
-                                    <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand slide-from-left" />
-                                    <h3 className="text-3xl font-display slide-from-top">Work Experience</h3>
+                                    <motion.div variants={fadeInLeft}>
+                                        <CornerDownRight strokeWidth={0.75} className="w-15 h-15 text-sand" />
+                                    </motion.div>
+                                    <motion.h3
+                                        className="text-3xl font-display"
+                                        variants={fadeInUp}
+                                    >
+                                        Work Experience
+                                    </motion.h3>
                                 </div>
-                                <ul className="list-disc space-y-4 text-gray-400 text-2xl slide-from-bottom">
+
+                                <motion.ul
+                                    className="list-disc space-y-4 text-gray-400 text-2xl"
+                                    variants={fadeInBottom}
+                                >
                                     <li>Software developer @ ECARX, 2023 - Present</li>
                                     <li>Cilbuper AB - Consultant at ECARX, 2023 - 2024</li>
-                                    <li>Xamera - Consusltant at Hogia, 2022 - 2022</li>
-                                </ul>
+                                    <li>Xamera - Consultant at Hogia, 2022 - 2022</li>
+                                </motion.ul>
                             </div>
                         </div>
                     </div>
 
-                    <div className="lg:w-1/2 relative slide-from-right">
+                    {/* Right Column: Image */}
+                    <motion.div className="lg:w-1/2 relative" variants={fadeInRight}>
                         <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
@@ -113,19 +198,35 @@ const App = () => {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
-            </section>
+            </motion.section>
+
 
             {/* Contact Section */}
-            <section id="contact" className="container mx-auto px-4 py-60 flex items-center">
+            <motion.section
+                id="contact"
+                className="container mx-auto px-4 py-60 flex items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
+            >
                 <div className="w-full space-y-60">
-                    <h2 className="font-display text-8xl leading-tight slide-from-top">
+                    {/* Heading */}
+                    <motion.h2
+                        className="font-display text-8xl leading-tight"
+                        variants={fadeInUp}
+                    >
                         Reach Out<br />
                         to Me
-                    </h2>
+                    </motion.h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 slide-from-bottom">
+                    {/* Contact Info Grid */}
+                    <motion.div
+                        className="grid grid-cols-1 md:grid-cols-3 gap-12"
+                        variants={fadeInBottom}
+                    >
+                        {/* Address */}
                         <div className="space-y-4">
                             <h3 className="text-3xl font-display">Address</h3>
                             <p className="text-xl text-gray-400">
@@ -134,38 +235,44 @@ const App = () => {
                             </p>
                         </div>
 
+                        {/* Email */}
                         <div className="space-y-4">
                             <h3 className="text-3xl font-display">Email</h3>
                             <a
-                                href="mailto:christopher.persson91@gmail.com" //TODO fix this
+                                href="mailto:christopher.persson91@gmail.com"
                                 className="text-xl text-gray-400 hover:text-sand transition-colors duration-300"
                             >
                                 christopher.persson91@gmail.com
                             </a>
                         </div>
 
+                        {/* Phone */}
                         <div className="space-y-4">
                             <h3 className="text-3xl font-display">Phone</h3>
                             <a
-                                href="tel:+11234567890" //TODO: Add phone number
+                                href="tel:+46768204747"
                                 className="text-xl text-gray-400 hover:text-sand transition-colors duration-300"
                             >
                                 +46 768 20 47 47
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
 
+                    {/* CTA */}
                     <div className="flex justify-end mx-50">
-                        <a
+                        <motion.a
                             href="#"
                             className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-colors duration-300"
+                            variants={fadeInLeft}
                         >
-                            <CornerDownRight className="w-10 h-10 transform group-hover:translate-x-2 transition-transform duration-300 slide-from-left" />
-                            <span className='slide-from-bottom'>Let&apos;s take a java</span>
-                        </a>
+                            <CornerDownRight className="w-10 h-10 transform group-hover:translate-x-2 transition-transform duration-300" />
+                            <motion.span variants={fadeInBottom}>
+                                Let&apos;s take a java
+                            </motion.span>
+                        </motion.a>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </div>
     );
 }
