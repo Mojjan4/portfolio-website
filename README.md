@@ -1,62 +1,60 @@
-# Welcome To My Portfolio Project!
+# Welcome to My Portfolio Project
 
-## Technologies Used
-### <ins>Frontend:</ins>
+## 🚀 Technologies Used
 
-React.js – A JavaScript library for building user interfaces.
+### Frontend
+- **React.js** – A JavaScript library for building user interfaces.
+- **Tailwind CSS** – A utility-first CSS framework for creating modern, responsive designs.
+- **Lucide React** – For scalable vector icons.
+- **Framer Motion** – Used for smooth scroll-based section animations and motion effects.
 
-Tailwind CSS – A utility-first CSS framework for creating modern, responsive designs.
+### Backend
+- **Node.js** – JavaScript runtime used for backend development.
 
-Lucide React – For scalable vector icons.
+### Build Tool
+- **Vite** – Optimized build tool for faster React development and performance.
 
-### <ins>Backend:</ins>
+### Tools & Libraries
+- **GitHub Actions** – Used for CI/CD pipelines to automate build, test, and deployment processes.
+- **npm** – For managing project dependencies.
 
-Node.js – JavaScript runtime used for backend development.
+---
 
-Vite – A build tool that focuses on speed and performance for modern web applications.
+## 🌟 Project Features
 
-<ins>Tools & Libraries:</ins> 
+- **Responsive Design** – The website adjusts seamlessly to all screen sizes.
+- **Animated Sections** – Smooth and elegant entrance animations triggered as the user scrolls.
+- **Interactive Elements** – Links, buttons, and icons enhance user engagement.
+- **Contact Section** – Enables direct reach-out via email or phone.
+- **Smooth Scrolling** – Creates a seamless scroll-through experience across all sections.
+- **Clean Architecture** – Modular structure using reusable components and motion wrappers.
 
-GitHub Actions – Used for CI/CD pipeline to automate the build, test, and deployment process.
+---
 
-Vite – Optimized build tool for faster React development.
+## 🛠️ How to Run the Project Locally
 
-npm – For managing project dependencies.
-
-### <ins>Project Features:</ins> 
-
-Responsive Design: The website adjusts smoothly to various screen sizes.
-
-Interactive Elements: Includes links, buttons, and icons that lead to different sections of the website.
-
-Contact Form: Allows potential recruiters to reach out directly through the website.
-
-Smooth Scrolling: A seamless scrolling experience between different sections of the website.
-
-
-## How to Run the Project Locally
-Clone the repository:
-
-bash
-```
+### 1. Clone the repository:
+```bash
 git clone https://github.com/your-username/portfolio-website.git
-Navigate to the project folder:
 ```
 
-bash
-```
+### 2. Navigate to the project folder:
+```bash
 cd portfolio-website
-Install dependencies:
 ```
 
-bash
-```
+### 3. Install dependencies:
+```bash
 npm install
-Run the development server:
 ```
 
-bash
-```
+### 4. Run the development server:
+```bash
 npm run dev
 ```
-This will start the development server and you can view the website in your browser at http://localhost:5173/.
+
+Open your browser and go to: [http://localhost:5173/](http://localhost:5173/) to see the portfolio in action.
+
+---
+
+Thank you for visiting my portfolio! If you're interested in working together, feel free to reach out or explore the project further. ☕
