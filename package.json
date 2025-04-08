@@ -2,5 +2,9 @@
   "devDependencies": {
     "eslint": "^9.23.0",
     "eslint-plugin-react": "^7.37.5"
+  },
+  "dependencies": {
+    "framer-motion": "^12.6.3",
+    "motion": "^12.6.3"
   }
 }
