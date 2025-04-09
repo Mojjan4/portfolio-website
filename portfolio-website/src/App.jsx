@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CornerDownRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './animations';
+import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './Animations';
+import ContactFormModal from './ContactFormModal';
 
 const App = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
-        <div className="bg-midnight text-white">
+        <div className=" text-white">
             {/* Landing Section */}
             <motion.main
                 id="home"
@@ -39,7 +42,7 @@ const App = () => {
                         <motion.div className="pt-12" variants={fadeInLeft}>
                             <a
                                 href="#contact"
-                                className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-all duration-300"
+                                className="cursor-pointer group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-all duration-300"
                             >
                                 <CornerDownRight
                                     strokeWidth={0.75}
@@ -258,23 +261,31 @@ const App = () => {
                         </div>
                     </motion.div>
 
-                    {/* CTA */}
-                    <div className="flex justify-end mx-50">
-                        <motion.a
-                            href="#"
-                            className="group inline-flex items-center space-x-4 text-3xl hover:text-sand transition-colors duration-300"
+                    <div className="flex justify-end mx-12" >
+                        <motion.button
+                            type='button'
+                            className="cursor-pointer group inline-flex items-center space-x-8 text-3xl hover:text-[#E5DDD3] transition-colors duration-300"
                             variants={fadeInLeft}
+                            onClick={() =>
+                                setIsModalOpen(true)}
                         >
                             <CornerDownRight className="w-10 h-10 transform group-hover:translate-x-2 transition-transform duration-300" />
                             <motion.span variants={fadeInBottom}>
                                 Let&apos;s take a java
                             </motion.span>
-                        </motion.a>
+                        </motion.button>
                     </div>
+
+                    {isModalOpen && (
+                        <ContactFormModal
+                            isModalOpen={isModalOpen}
+                            setIsModalOpen={setIsModalOpen}
+                        />
+                    )}
                 </div>
             </motion.section>
         </div>
     );
-}
+};
 
 export default App;
