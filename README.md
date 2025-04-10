@@ -1,60 +1,63 @@
-# Welcome to My Portfolio Project
+# Portfolio Website
 
-## 🚀 Technologies Used
+This is a developer portfolio website built with **React**, **Vite**, and **Tailwind CSS**. It includes smooth scrolling, responsive layout, and a working contact form powered by **EmailJS**.
 
-### Frontend
-- **React.js** – A JavaScript library for building user interfaces.
-- **Tailwind CSS** – A utility-first CSS framework for creating modern, responsive designs.
-- **Lucide React** – For scalable vector icons.
-- **Framer Motion** – Used for smooth scroll-based section animations and motion effects.
+## 🛠️ Tech Stack
 
-### Backend
-- **Node.js** – JavaScript runtime used for backend development.
-
-### Build Tool
-- **Vite** – Optimized build tool for faster React development and performance.
-
-### Tools & Libraries
-- **GitHub Actions** – Used for CI/CD pipelines to automate build, test, and deployment processes.
-- **npm** – For managing project dependencies.
+- **Frontend Framework**: React (with Vite)
+- **Styling**: Tailwind CSS
+- **Form Handling**: EmailJS (temporarily using hardcoded keys)
+- **Environment**: Node.js + npm
 
 ---
 
-## 🌟 Project Features
+## 🚀 Running the Project
 
-- **Responsive Design** – The website adjusts seamlessly to all screen sizes.
-- **Animated Sections** – Smooth and elegant entrance animations triggered as the user scrolls.
-- **Interactive Elements** – Links, buttons, and icons enhance user engagement.
-- **Contact Section** – Enables direct reach-out via email or phone.
-- **Smooth Scrolling** – Creates a seamless scroll-through experience across all sections.
-- **Clean Architecture** – Modular structure using reusable components and motion wrappers.
+Navigate into the `portfolio-website` folder and run:
 
----
-
-## 🛠️ How to Run the Project Locally
-
-### 1. Clone the repository:
-```bash
-git clone https://github.com/your-username/portfolio-website.git
-```
-
-### 2. Navigate to the project folder:
 ```bash
 cd portfolio-website
-```
-
-### 3. Install dependencies:
-```bash
 npm install
-```
-
-### 4. Run the development server:
-```bash
 npm run dev
 ```
 
-Open your browser and go to: [http://localhost:5173/](http://localhost:5173/) to see the portfolio in action.
+Visit the site at: [http://localhost:5173](http://localhost:5173)
 
 ---
 
-Thank you for visiting my portfolio! If you're interested in working together, feel free to reach out or explore the project further. ☕
+## ✉️ Contact Form (EmailJS)
+
+The contact form is implemented using **EmailJS**. For now, API keys are hardcoded directly into the `ContactFormModal.jsx` file. This is **temporary** and should be replaced later using environment variables.
+
+### ✅ What Works
+
+- Email is successfully sent via `emailjs.sendForm(...)`.
+- The modal closes and shows an alert upon success.
+- Simple validation checks for required fields.
+
+### ⚠️ To-Do (Later)
+
+- Move EmailJS credentials (`service ID`, `template ID`, `public key`) to `.env.local` file
+- Resolve Vite config and root structure to ensure environment variables load properly
+
+---
+
+## 🧩 Known Issues
+
+- `vite.config.js` is not currently located at the root — moving it breaks Tailwind setup
+- Two `package.json` files may cause confusion — plan to unify or simplify later
+- `.env.local` setup will be fixed when moving to production
+
+---
+
+## 📌 Notes
+
+- Tailwind is set up and working within the `portfolio-website` folder
+- All new components and changes should go under this folder
+- Use `npm run dev` inside `portfolio-website` for local development
+
+---
+
+## 📦 Deployment
+
+To be addressed in a future commit. Will include `.env` usage, secure key handling, and optimization.
