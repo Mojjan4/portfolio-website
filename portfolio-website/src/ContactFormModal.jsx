@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { X, Send } from 'lucide-react';// or any icon library you're using
+import { X, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -48,12 +50,22 @@ const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
     };
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Validate the form fields
         if (!validateForm()) return;
-        console.log('Form submitted:', formData);
-        setIsModalOpen(false);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        try {
+            const result = await emailjs.sendForm("service_ce4saer", "template_ngpnh5t", e.target, {
+                publicKey: "-3MTfcqMwHCQ-uom3",
+            });
+            console.log(result.text);
+            setIsModalOpen(false);
+            alert('Message sent successfully!');
+        } catch (error) {
+            console.log(error.text);
+        }
     };
 
     const handleInputChange = (e) => {
@@ -87,7 +99,7 @@ const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
                         <X className="w-6 h-6" />
                     </button>
 
-                    <h3 className="font-display text-4xl mb-8">Let's Connect</h3>
+                    <h3 className="font-display text-4xl mb-8">Let&apos;s Connect</h3>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
