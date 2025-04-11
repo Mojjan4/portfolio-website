@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { CornerDownRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './Animations';
-import ContactFormModal from './ContactFormModal';
+import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './styles/animations/Animations.jsx';
+import ContactFormModal from '../src/components/contact/ContactFormModal.jsx';
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
