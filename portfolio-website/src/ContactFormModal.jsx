@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { X, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import NotificationDialog from './NotificationDialog';
 
 const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
+
+    const [notification, setNotification] = useState(null);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -56,15 +59,27 @@ const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
         // Validate the form fields
         if (!validateForm()) return;
 
+        setNotification(null);
+
         try {
             const result = await emailjs.sendForm("service_ce4saer", "template_ngpnh5t", e.target, {
                 publicKey: "-3MTfcqMwHCQ-uom3",
             });
             console.log(result.text);
-            setIsModalOpen(false);
-            alert('Message sent successfully!');
+            setNotification({ message: 'Message sent successfully! I will get back to you soon!', type: 'success' });
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            });
+
+            setTimeout(() => {
+                setIsModalOpen(false);
+            }, 2000);
         } catch (error) {
             console.log(error.text);
+            setNotification({ message: 'Failed to send message. Please try again later.', type: 'error' });
         }
     };
 
@@ -174,6 +189,7 @@ const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
                             <Send className="w-5 h-5" />
                         </button>
                     </form>
+                    <NotificationDialog {...notification} />
                 </div>
             </div>
         )
