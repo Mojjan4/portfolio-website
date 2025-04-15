@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { X } from 'lucide-react';
 import ContactForm from './ContactForm';
+import PropTypes from 'prop-types';
 
 const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
 
@@ -30,5 +31,10 @@ const ContactFormModal = ({ isModalOpen, setIsModalOpen }) => {
         )
     );
 };
+
+ContactFormModal.propTypes = {
+    isModalOpen: PropTypes.bool.isRequired,
+    setIsModalOpen: PropTypes.func.isRequired,
+  };
 
 export default ContactFormModal;

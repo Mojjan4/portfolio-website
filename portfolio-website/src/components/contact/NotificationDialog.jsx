@@ -1,5 +1,6 @@
 import React from "react";
 import { BadgeCheck, BadgeAlert } from "lucide-react";
+import PropTypes from 'prop-types';
 
 
 const NotificationDialog = ({ message, type }) => {
@@ -22,5 +23,10 @@ const NotificationDialog = ({ message, type }) => {
         </div>
     )
 }
+
+NotificationDialog.propTypes = {
+    message: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['success', 'error']).isRequired,
+};
 
 export default NotificationDialog;
