@@ -58,6 +58,6 @@ The contact form is implemented using **EmailJS**. For now, API keys are hardcod
 
 ---
 
-## 📦 Deployment
+## 📦 CI/CD Flow
 
-To be addressed in a future commit. Will include `.env` usage, secure key handling, and optimization.
+[![CI/CD Pipeline](https://github.com/Mojjan4/portfolio-website/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Mojjan4/portfolio-website/actions/workflows/ci-cd.yml)
