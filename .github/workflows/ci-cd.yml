@@ -1,31 +1,58 @@
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    build:
+        runs-on: ubuntu-latest
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: |
-          cd portfolio-website
-          npm install
 
-      - name: Build frontend
-        run: |
-          cd portfolio-website
-          npm run build
+            - name: Cache node modules
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
+
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+
+            - name: Install dependencies
+              run: |
+                  cd portfolio-website
+                  npm ci
+
+
+            - name: Run ESLint
+              continue-on-error: false
+              run: |
+                  cd portfolio-website
+                  npx eslint . --max-warnings=0
+
+
+            - name: Build frontend
+              run: |
+                  cd portfolio-website
+                  npm run build
+
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./portfolio-website/dist

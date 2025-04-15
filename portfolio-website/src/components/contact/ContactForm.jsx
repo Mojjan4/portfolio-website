@@ -3,6 +3,7 @@ import { Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import NotificationDialog from './NotificationDialog';
+import PropTypes from 'prop-types';
 
 
 const ContactForm = ({ setIsModalOpen }) => {
@@ -177,5 +178,9 @@ const ContactForm = ({ setIsModalOpen }) => {
         </form>
     )
 };
+
+ContactForm.propTypes = {
+    setIsModalOpen: PropTypes.func.isRequired, // or .optional if it's not required
+  };
 
 export default ContactForm;
