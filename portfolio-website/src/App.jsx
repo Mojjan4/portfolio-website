@@ -3,6 +3,7 @@ import { CornerDownRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './styles/animations/Animations.jsx';
 import ContactFormModal from '../src/components/contact/ContactFormModal.jsx';
+import Footer from './components/Footer.jsx';
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -284,6 +285,7 @@ const App = () => {
                     )}
                 </div>
             </motion.section>
+            <Footer />
         </div>
     );
 };
