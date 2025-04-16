@@ -5,7 +5,6 @@ import { useState } from 'react';
 import NotificationDialog from './NotificationDialog';
 import PropTypes from 'prop-types';
 
-
 const ContactForm = ({ setIsModalOpen }) => {
     const [notification, setNotification] = useState(null);
 
@@ -180,7 +179,7 @@ const ContactForm = ({ setIsModalOpen }) => {
 };
 
 ContactForm.propTypes = {
-    setIsModalOpen: PropTypes.func.isRequired, // or .optional if it's not required
+    setIsModalOpen: PropTypes.func.isRequired,
   };
 
 export default ContactForm;

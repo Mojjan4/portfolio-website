@@ -1,10 +1,11 @@
 import React from 'react';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { motion } from 'motion/react';
 
 const Footer = () => {
     return (
         <footer className="w-full py-2 flex justify-center gap-50 ound pb-30">
-            <a
+            <motion.a
                 href="https://github.com/Mojjan4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -12,8 +13,8 @@ const Footer = () => {
                 className="hover:text-sand transition-transform duration-300 hover:scale-110"
             >
                 <SiGithub size={50} />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
                 href="https://www.linkedin.com/in/christopher-lundqvist-8741b2aa/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -21,7 +22,7 @@ const Footer = () => {
                 className="hover:text-sand transition-transform duration-300 hover:scale-110"
             >
                 <SiLinkedin size={50} />
-            </a>
+            </motion.a>
         </footer>
     );
 };
