@@ -7,7 +7,6 @@ const NotificationDialog = ({ message, type }) => {
 
     if (!message) return null;
 
-
     return (
         <div
             className={`fixed top-4 right-4 max-w-md p-4 rounded-lg shadow-lg slide-from-right bg-[#D4C5B3] text-black`}

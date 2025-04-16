@@ -44,6 +44,11 @@ jobs:
                   cd portfolio-website
                   npx eslint . --max-warnings=0
 
+            - name: Run Tests
+              run: |
+                  cd portfolio-website
+                  npm run test
+
 
             - name: Build frontend
               run: |
