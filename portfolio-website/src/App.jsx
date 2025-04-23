@@ -4,6 +4,8 @@ import { motion } from 'motion/react';
 import { fadeInUp, fadeInLeft, fadeInRight, fadeInBottom } from './styles/animations/Animations.jsx';
 import ContactFormModal from '../src/components/contact/ContactFormModal.jsx';
 import Footer from './components/Footer.jsx';
+import portrait from './assets/portrait.jpeg';
+
 
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,7 +60,7 @@ const App = () => {
                     <motion.div className="lg:w-1/2 relative" variants={fadeInRight}>
                         <div className="w-[500px] h-[600px] rounded-[300px] overflow-hidden">
                             <img
-                                src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80"
+                                src={portrait}
                                 alt="Professional portrait"
                                 className="w-full h-full object-cover"
                             />
@@ -243,8 +245,9 @@ const App = () => {
                         <div className="space-y-4">
                             <h3 className="text-3xl font-display">Email</h3>
                             <a
-                                href="mailto:christopher.persson91@gmail.com"
-                                className="text-xl text-gray-400 hover:text-sand transition-colors duration-300"
+                                onClick={() =>
+                                    setIsModalOpen(true)}
+                                className="text-xl text-gray-400 hover:text-sand transition-colors duration-300 cursor-pointer"
                             >
                                 christopher.persson91@gmail.com
                             </a>
@@ -253,12 +256,11 @@ const App = () => {
                         {/* Phone */}
                         <div className="space-y-4">
                             <h3 className="text-3xl font-display">Phone</h3>
-                            <a
-                                href="tel:+46768204747"
+                            <p
                                 className="text-xl text-gray-400 hover:text-sand transition-colors duration-300"
                             >
                                 +46 768 20 47 47
-                            </a>
+                            </p>
                         </div>
                     </motion.div>
 
