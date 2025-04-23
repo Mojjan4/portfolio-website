@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vite.dev/config/
 export default defineConfig(() => {
     return {
-        base: "/portfolio-website",
+        base: "/portfolio-website/",
         define: {
 
         },
