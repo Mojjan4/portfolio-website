@@ -1,13 +1,13 @@
 # Portfolio Website
 
-This is a developer portfolio website built with **React**, **Vite**, and **Tailwind CSS**. It includes smooth scrolling, responsive layout, and a working contact form powered by **EmailJS**.
+This is a short portfolio website built using React, Vite, and Tailwind CSS. It features smooth scrolling, a responsive layout, and a fully functional contact form powered by EmailJS. This project highlights some of my skills in frontend development and modern web technologies.
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React (with Vite)
-- **Styling**: Tailwind CSS
-- **Form Handling**: EmailJS (temporarily using hardcoded keys)
-- **Environment**: Node.js + npm
+- **Frontend Framework**: React (with Vite for fast build and development)
+- **Styling**: Tailwind CSS (utility-first CSS framework)
+- **Form Handling**: EmailJS (for sending emails without a backend)
+- **Environment**: Node.js + npm (for package management
 
 ---
 
@@ -27,37 +27,21 @@ Visit the site at: [http://localhost:5173](http://localhost:5173)
 
 ## ✉️ Contact Form (EmailJS)
 
-The contact form is implemented using **EmailJS**. For now, API keys are hardcoded directly into the `ContactFormModal.jsx` file. This is **temporary** and should be replaced later using environment variables.
+The contact form is powered by EmailJS, allowing visitors to contact me without the need for a backend.
 
-### ✅ What Works
-
-- Email is successfully sent via `emailjs.sendForm(...)`.
-- The modal closes and shows an alert upon success.
-- Simple validation checks for required fields.
-
-### ⚠️ To-Do (Later)
-
-- Move EmailJS credentials (`service ID`, `template ID`, `public key`) to `.env.local` file
-- Resolve Vite config and root structure to ensure environment variables load properly
-
----
-
-## 🧩 Known Issues
-
-- `vite.config.js` is not currently located at the root — moving it breaks Tailwind setup
-- Two `package.json` files may cause confusion — plan to unify or simplify later
-- `.env.local` setup will be fixed when moving to production
-
----
+- **EmailJS Integration**: Sends emails via the emailjs.sendForm(...) method.
+- **Modal Behavior**: Upon submission, the modal closes and displays an alert confirming the message has been sent.
+- **Validation**: Basic validation ensures required fields are filled before submission.
 
 ## 📌 Notes
 
-- Tailwind is set up and working within the `portfolio-website` folder
-- All new components and changes should go under this folder
-- Use `npm run dev` inside `portfolio-website` for local development
-
+- **Tailwind CSS**: Set up and working within the portfolio-website folder for styling.
+- **New Components**: All new components and changes should go under the portfolio-website folder.
+- **Development**: Run npm run dev inside the portfolio-website folder for local development.
 ---
 
 ## 📦 CI/CD Flow
+
+The project has a fully automated CI/CD pipeline to build and deploy to GitHub Pages.
 
 [![CI/CD Pipeline](https://github.com/Mojjan4/portfolio-website/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Mojjan4/portfolio-website/actions/workflows/ci-cd.yml)
